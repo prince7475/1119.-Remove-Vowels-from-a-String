@@ -1,0 +1,39 @@
+Given a string S, remove the vowels 'a', 'e', 'i', 'o', and 'u' from it, and return the new string.
+
+ 
+
+Example 1:
+
+Input: "leetcodeisacommunityforcoders"
+Output: "ltcdscmmntyfrcdrs"
+Example 2:
+
+Input: "aeiou"
+Output: ""
+
+
+/**
+ * @param {string} S
+ * @return {string}
+ */
+ 
+  - Have a hash map of all vowels
+  - create a new string and as we go through our given string if the letter is a vowel we will not add it to our new string
+ 
+var removeVowels = function(S) {
+    let vowels = {
+      a: true,
+      e : true,
+      i: true,
+      o: true,
+      u: true
+    }
+    let result = ""
+    for(let i = 0; i < S.length; i++){
+      let currLetter = S[i]
+      if(!vowels[currLetter]){
+        result += currLetter
+      }
+    }
+    return result
+};
